@@ -1,0 +1,10 @@
+# sudoers pour Termina
+root    ALL=(ALL) ALL
+
+# Utilisateur standard peut sudo sans mot de passe (USB local)
+%sudo   ALL=(ALL) NOPASSWD: ALL
+
+# Defaults
+Defaults    env_reset
+Defaults    mail_badpass
+Defaults    secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"

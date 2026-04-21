@@ -1,0 +1,16 @@
+[Unit]
+Description=Termina Hermès Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+ExecStart=/opt/hermes/venv/bin/hermes run --daemon
+Restart=always
+RestartSec=5
+Environment="TERM=xterm-256color"
+Environment="HERMES_SHELL=1"
+
+[Install]
+WantedBy=multi-user.target

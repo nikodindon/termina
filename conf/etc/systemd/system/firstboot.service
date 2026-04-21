@@ -1,0 +1,19 @@
+[Unit]
+Description=Termina First Boot Wizard
+After=network.target
+Before=getty@tty1.service
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/firstboot-wizard
+StandardInput=tty
+StandardOutput=tty
+StandardOutput=journal+console
+TTYPath=/dev/tty1
+TTYReset=yes
+TTYVHangup=yes
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
